@@ -7,7 +7,7 @@ const FurnitureContext = createContext();
 
 const FurnitureProvider = ({ children }) => {
 
-    const [categories, setcategories] = useState([]);
+    const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [orders, setOrders] = useState([]);
     const [users, setUsers] = useState([]);
@@ -37,7 +37,7 @@ const FurnitureProvider = ({ children }) => {
         }
     }
 
-    const obtenercategories = async () => {
+    const getCategories = async () => {
         // const token = localStorage.getItem('AUTH_TOKEN')
         try {
             const { data } = await clienteAxios('/api/productCategory', {
@@ -46,14 +46,14 @@ const FurnitureProvider = ({ children }) => {
                 // }
             })
             console.log(data);
-            setcategories(data)
+            setCategories(data)
             // setCurrentCategory(data[0])
         } catch (error) {
             console.log(error)
         }
     }
 
-    const obtenerProductos = async () => {
+    const getProducts = async () => {
         // const token = localStorage.getItem('AUTH_TOKEN')
         try {
             const { data } = await clienteAxios('/api/products', {
@@ -70,8 +70,8 @@ const FurnitureProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        obtenercategories();
-        obtenerProductos();
+        getCategories();
+        getProducts();
     }, [])
 
     const handleClickCategory = id => {
