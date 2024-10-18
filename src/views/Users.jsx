@@ -10,6 +10,8 @@ export default function Users() {
         handleGetAllUsers();
     }, [])
 
+    useAuth({ middleware: 'admin' });
+
 
     return (
         <>

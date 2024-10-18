@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import MapView from '../components/MapView'
 import useFurniture from '../hooks/useFurniture'
 import { useState } from 'react'
+import { useAuth } from '../hooks/useAuth'
 
 export default function Contact() {
+
+    useAuth({ middleware: 'guest' });
 
     // const { handleSubmit } = useFurniture();
     const [formData, setFormData] = useState({

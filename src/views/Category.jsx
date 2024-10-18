@@ -1,10 +1,12 @@
 import React from 'react'
 import useFurniture from '../hooks/useFurniture'
 import AdminCategory from '../components/AdminCategory';
+import { useAuth } from '../hooks/useAuth';
 
 export default function Category() {
 
     const { categories, handleClickCategoryModal } = useFurniture();
+    useAuth({ middleware: 'admin' });
 
     return (
         <>

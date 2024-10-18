@@ -1,5 +1,6 @@
 import useFurniture from '../hooks/useFurniture';
 import { useState, useEffect } from 'react';
+import { useAuth } from '../hooks/useAuth';
 
 export default function Orders() {
     const { 
@@ -11,6 +12,8 @@ export default function Orders() {
         handleGetAllUserOrders,
         usersOrders // Suponiendo que este es el estado que contiene las órdenes
     } = useFurniture();
+
+    useAuth({ middleware: 'admin' });
     
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

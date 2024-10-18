@@ -1,9 +1,11 @@
 import Product from '../components/Product'
 import useFurniture from '../hooks/useFurniture'
+import { useAuth } from '../hooks/useAuth';
 
 export default function Products() {
 
   const { products, handleClickModal } = useFurniture();
+  useAuth({ middleware: 'admin' });
 
   return (
     <div>

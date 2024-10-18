@@ -11,6 +11,7 @@ export default function Shop() {
     const [sortOption, setSortOption] = useState("menu_order");
     const [searchTerm, setSearchTerm] = useState("");
     // const {user} = useAuth();
+    useAuth({ middleware: 'guest' });
     
     const { currentCategory, obtenerValorDolar, products } = useFurniture();
 

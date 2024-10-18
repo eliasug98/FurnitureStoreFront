@@ -3,7 +3,7 @@ import useFurniture from '../hooks/useFurniture';
 import { useAuth } from '../hooks/useAuth';
 
 export default function AdminChat() {
-    const { user } = useAuth({ middleware: 'auth' });
+    const { user } = useAuth({ middleware: 'admin' });
     const [selectedUserId, setSelectedUserId] = useState(null); // Almacena el ID del usuario seleccionado
     const [newMessage, setNewMessage] = useState('');
     const { getMessages, messages, handleSendMessage, users, markMessagesAsRead } = useFurniture();

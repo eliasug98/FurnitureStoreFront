@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa'; // Importar un ícono de Font Awesome
+import { useAuth } from '../hooks/useAuth';
 
 export default function Blog() {
+
+    useAuth({ middleware: 'guest' });
+
     const posts = [
         {
             title: "Transform Your Living Space with Modern Furniture",

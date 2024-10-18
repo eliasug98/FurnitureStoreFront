@@ -5,8 +5,11 @@ import useFurniture from '../hooks/useFurniture'
 import { Link } from 'react-router-dom'
 import CategoriaInicio from '../components/CategoriaInicio'
 import FeaturedProducts from '../components/FeaturedProducts'
+import { useAuth } from '../hooks/useAuth'
 
 export default function Inicio() {
+
+  useAuth({ middleware: 'guest' });
 
   // const { currentCategory } = useFurniture()
 

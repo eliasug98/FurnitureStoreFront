@@ -5,11 +5,12 @@ import useFurniture from '../hooks/useFurniture'
 import { useState } from 'react'
 import Offerings from '../components/Offerings'
 import AboutHighlights from '../components/AboutHighlights'
+import { useAuth } from '../hooks/useAuth'
 
 export default function About() {
 
     // const { handleSubmit } = useFurniture();
-
+    useAuth({ middleware: 'guest' });
 
     return (
         <>
